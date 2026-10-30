@@ -343,3 +343,4 @@ C:\CPOO\LoginEJ\LoginMVC\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime.d
 C:\CPOO\LoginEJ\LoginMVC\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
 C:\CPOO\LoginEJ\LoginMVC\obj\Debug\net10.0\LoginMVC.csproj.AssemblyReference.cache
 C:\CPOO\LoginEJ\LoginMVC\obj\Debug\net10.0\LoginMVC.csproj.Up2Date
+C:\CPOO\LoginEJ\LoginMVC\obj\Debug\net10.0\LoginMVC.sourcelink.json

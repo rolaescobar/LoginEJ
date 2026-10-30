@@ -2,7 +2,115 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenidos Programación Orientada a Objetos</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container my-4">
+    <!-- Encabezado Principal -->
+    <div class="text-center mb-5">
+        <h1 class="display-4">Bienvenidos Programación Orientada a Objetos</h1>
+        <p class="lead text-muted">Panel de administración y gestión del sistema de autenticación</p>
+        
+        <!-- Botones de acceso rápido al CRUD de Usuarios -->
+        <div class="d-flex justify-content-center gap-3 my-4">
+            <a asp-controller="Usuarios" asp-action="Index" class="btn btn-primary btn-lg shadow-sm">
+                📋 Gestionar Usuarios
+            </a>
+            <a asp-controller="Usuarios" asp-action="Create" class="btn btn-success btn-lg shadow-sm">
+                ➕ Registrar Nuevo Usuario
+            </a>
+        </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <!-- Sección Informativa del Proyecto para los Alumnos -->
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header bg-dark text-white py-3">
+            <h3 class="card-title m-0">🚀 Proyecto Práctico: Sistema de Autenticación y Control de Acceso (Login MVC)</h3>
+        </div>
+        <div class="card-body p-4">
+            
+            <!-- 1. Objetivo y Modalidad -->
+            <h5 class="text-primary fw-bold">1. Objetivo del Proyecto y Modalidad</h5>
+            <p>
+                Desarrollar una aplicación web utilizando el patrón Modelo-Vista-Controlador (MVC) en C# (.NET) e interactuando con una base de datos en SQL Server, que permita implementar un flujo completo de autenticación de usuarios (inicio de sesión) y una interfaz principal personalizada con el nombre del integrante autenticado.
+            </p>
+            <p>
+                <strong>Modalidad de Trabajo:</strong> El proyecto puede realizarse de forma individual o en grupo. En caso de trabajar en grupo, cada integrante debe poseer su propio registro de usuario único en la base de datos con sus respectivas credenciales, de modo que al iniciar sesión con el usuario de cualquier integrante, la pantalla principal muestre explícitamente su nombre y un mensaje de bienvenida personalizado.
+            </p>
+
+            <hr />
+
+            <!-- 2. Requerimientos Funcionales -->
+            <h5 class="text-primary fw-bold">2. Requerimientos Funcionales</h5>
+            <ul>
+                <li><strong>Pantalla de Inicio de Sesión (Login):</strong> Debe incluir un formulario con los campos de Correo Electrónico / Usuario y Contraseña, validar las credenciales consultando directamente una tabla en SQL Server, y mostrar mensajes de error claros en caso de fallos.</li>
+                <li><strong>Pantalla Principal / Dashboard (Visualización y Sesión):</strong> Una vez autenticado exitosamente, el usuario será redirigido a una vista protegida. La interfaz debe:
+                    <ul>
+                        <li>Mostrar de forma dinámica un <strong>mensaje de bienvenida personalizado con el nombre del usuario logueado</strong> (ej. <em>"¡Bienvenido de nuevo, [Nombre del Estudiante]!"</em>).</li>
+                        <li>Visualizar claramente el <strong>usuario logueado actualmente</strong> en la interfaz o en la barra de navegación.</li>
+                        <li>Incluir un botón u opción funcional para <strong>Cerrar Sesión (Logout)</strong> que destruya la sesión o cookie activa y redirija de vuelta al login.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr />
+
+            <!-- 3. Requerimientos Técnicos -->
+            <h5 class="text-primary fw-bold">3. Requerimientos Técnicos</h5>
+            <ul>
+                <li><strong>Tecnologías:</strong> ASP.NET Core MVC (o .NET Framework MVC) utilizando C#.</li>
+                <li><strong>Base de Datos:</strong> Microsoft SQL Server. Se debe incluir la estructura de la tabla de usuarios con campos como Id, Nombre, Correo y Password. Si el proyecto es en grupo, la tabla debe contener los registros de todos los integrantes del equipo.</li>
+                <li><strong>Interfaz de Usuario:</strong> Uso de Bootstrap u otro framework CSS para asegurar una presentación limpia y responsiva.</li>
+            </ul>
+
+            <hr />
+
+            <!-- 4. Checklist de Requerimientos Adicionales, Seguridad y Plus -->
+            <h5 class="text-primary fw-bold">4. Checklist de Requerimientos Adicionales (Buenas Prácticas y Plus)</h5>
+            <p class="text-muted">Asegúrate de marcar y cumplir los siguientes puntos de seguridad, diseño y extensión en tu proyecto:</p>
+            
+            <div class="list-group mb-4">
+                <div class="list-group-item list-group-item-action d-flex align-items-center">
+                    <input class="form-check-input me-3 fs-5" type="checkbox" disabled checked>
+                    <div>
+                        <strong>Cifrado de Contraseñas:</strong> Las credenciales no deben guardarse en texto plano; implementar hashing o cifrado seguro (ej. PasswordHasher de ASP.NET Core o equivalente).
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action d-flex align-items-center">
+                    <input class="form-check-input me-3 fs-5" type="checkbox" disabled checked>
+                    <div>
+                        <strong>Mejora del Diseño (UI/UX):</strong> Interfaz visual depurada, profesional, atractiva y 100% responsiva haciendo uso avanzado de Bootstrap o estilos personalizados.
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action d-flex align-items-center border-success bg-light">
+                    <input class="form-check-input me-3 fs-5" type="checkbox" disabled>
+                    <div>
+                        <span class="badge bg-success mb-1">PLUS / Opcional (Puntos Extra)</span><br>
+                        <strong>Nuevos Controladores para Nuevas Características:</strong> Creación de controladores adicionales que amplíen el sistema (por ejemplo, gestión de roles, catálogos, bitácoras o módulos de administración).
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <!-- 5. Entregables Esperados -->
+            <h5 class="text-primary fw-bold">5. Entregables Esperados y Ponderación</h5>
+            <ol>
+                <li><strong>Código Fuente:</strong> Repositorio en Git (GitHub) o proyecto comprimido completo, ordenado y comentado.</li>
+                <li><strong>Script de Base de Datos:</strong> Archivo .sql con las sentencias para crear la base de datos, la tabla de usuarios y los registros de prueba correspondientes (incluyendo las credenciales de cada integrante si es grupal).</li>
+                <li><strong>Breve Documentación / Manual:</strong> Documento con capturas de pantalla del funcionamiento del login exitoso con los usuarios de los integrantes, visualización del usuario logueado, proceso de cierre de sesión y las instrucciones de ejecución.</li>
+            </ol>
+
+            <div class="alert alert-info mt-3 mb-0">
+                <strong>Detalles de Entrega:</strong>
+                <ul class="mb-0">
+                    <li><strong>Puntos:</strong> 15</li>
+                    <li><strong>Fecha de entrega:</strong> 28 de noviembre de 2026</li>
+                    <li><strong>Tipo de entrega:</strong> Presentación en Teams</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    
 </div>
